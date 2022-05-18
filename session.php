@@ -1,0 +1,31 @@
+<?php
+include('config.php');
+session_start();
+
+$user_check = $_SESSION['login_user'];
+
+$ses_sql = mysqli_query($conn,"select email from users where email = '$user_check' ");
+
+$row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
+
+$login_session = $row['email'];
+
+if(!isset($_SESSION['login_user'])){
+    header("location:login.php");
+    die();
+}
+
+if(isset($_SESSION['remember'])){
+    
+    $inactive = 3600;
+    
+    $session_life = time() - $_SESSION['time'];
+    
+    if($session_life > $inactive)
+    {
+        session_destroy();
+    }
+    
+    $_SESSION['time']=time();
+}
+?>
