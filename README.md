@@ -62,20 +62,20 @@ Create a users table:
 
 ### ▶️ Running the Application
 
-* Clone or copy the project into your PHP server’s root directory (e.g., htdocs/ for XAMPP or www/ for WAMP).
-* Start Apache and MySQL.
-* Import the sleepycat database and users table as described above.
-* Update database credentials in config.php if necessary:
+Clone or copy the project into your PHP server’s root directory (e.g., htdocs/ for XAMPP or www/ for WAMP).
 
+Start Apache and MySQL.
+
+Import the sleepycat database and users table as described above.
+
+Update database credentials in config.php if necessary:
 
     $servername="localhost";
     $username="root";
     $password="";
     $dbname="sleepycat";
 
-
-* Open in browser:
-
+Open in browser:
 
     http://localhost/<project-folder>/login.php
 
